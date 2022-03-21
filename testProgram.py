@@ -1,6 +1,6 @@
 import datetime
 import platform
-
+import sys
 
 print("Platform.system : %s"%(platform.system()))
 print("Platform.release: %s"%(platform.release()))
