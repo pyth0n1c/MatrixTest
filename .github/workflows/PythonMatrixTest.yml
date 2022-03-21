@@ -19,7 +19,7 @@ jobs:
       - name: Test OS and Python
         uses: actions/setup-python@v2
         with:
-          python-version: '${{ matrix.pythonVersion }}''
+          python-version: '${{ matrix.pythonVersion }}'
       
       - name: Run Python Program
         run: |
