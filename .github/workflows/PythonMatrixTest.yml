@@ -1,0 +1,25 @@
+name: Test Matrix Functionality
+
+# Trigger the workflow on pull request
+on: pull_request_target
+
+jobs:
+  matrixtest:
+    name: Test matrix functionality with multple Python versions and OS versions
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, ubuntu-20.04, windows-2022, macos-latest]
+        pythonVersion: [2.7, 3.7, 3.8, 3.9, 3.10]
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Test OS and Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ pythonVersion }}
+      
+      - name: Run Python Program
+        run: |
+          python testProgram.py
