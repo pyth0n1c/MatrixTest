@@ -9,6 +9,7 @@ jobs:
     name: Test matrix functionality with multple Python versions and OS versions
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04, windows-2022, macos-latest]
         pythonVersion: ['2.7', '3.7', '3.8', '3.9', '3.10']
